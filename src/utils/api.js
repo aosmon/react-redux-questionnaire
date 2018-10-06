@@ -20,5 +20,5 @@ export function saveQuestionAnswer (info) {
 }
 
 export function saveQuestion (info) {
-  return _saveTweet(info)
+  return _saveQuestion(info)
 }
