@@ -1,0 +1,72 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #252525;
+}
+
+a {
+  text-decoration: none;
+  color: #252525;
+}
+
+.container {
+  width: 700px;
+  margin: 0 auto;
+  height: 100%;
+  display: block;
+}
+header{
+  width: 100%;
+  border-bottom: 3px solid #06caa9;
+  top: 0;
+  height: 50px;
+  position: fixed;
+  padding: 10px 0 0 0;
+}
+
+/******* Navigation ********/
+
+.active {
+  /*font-weight: bold;*/
+}
+.nav{
+  margin: 0 auto;
+  width: 650px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap; 
+  font-weight: 600;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.nav li:first-child {
+  padding-left: 0;
+}
+
+.nav ul {
+  padding-left: 0;
+}
+.nav li {
+  list-style-type: none; 
+  text-decoration: none;
+  text-align: center;
+}
+.nav li{
+  padding: 0 10px;
+  min-width: 70px;
+}
+
+.avatar {
+  height: 50px;
+  border-radius: 25px;
+  margin: 10px;
+}
