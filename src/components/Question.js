@@ -3,8 +3,12 @@ import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
 
 class Question extends Component{
+
+	toQuestionDetails = (e, id) =>{
+		e.preventDefault();
+	}
+
 	render() {
-		//{this.props.id}
 		return (
 			<div className='question-container'>
 				<h3 className='question-header'>{this.props.question.author} asks:</h3>
@@ -13,7 +17,7 @@ class Question extends Component{
 					<div className='question-content'>
 						<h4>Would you rather...</h4>
 						<p>...{this.props.question.optionOne.text}...</p>
-						<button>View Poll</button>
+						<button className='toQuestionDetails' onClick={(e)=>this.toQuestionDetails(e, this.props.id)}>View Poll</button>
 					</div>
 				</div>
 			</div>
