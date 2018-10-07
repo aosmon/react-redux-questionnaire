@@ -4,11 +4,21 @@ body, root{
   padding: 0;
   font-family: 'Raleway', sans-serif;
   color: #454545;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
   color: #454545;
+}
+ul{
+  text-indent: 0;
+  margin: 0;
+  padding: 0;
+}
+ul li{
+  list-style-type: none;
+  text-indent: 0;
 }
 
 header{
@@ -18,12 +28,14 @@ header{
   height: 50px;
   position: fixed;
   padding: 10px 0 0 0;
+  background-color: #fff;
 }
 
 main{
-  width: 650px;
-  margin: 63px auto 0 auto;
-  border: 1px solid #ddd;
+  top: 50px;
+  width: 100%;
+  margin: 63px 0 0 0;
+  padding: 15px;
 }
 /******* Navigation ********/
 
@@ -73,6 +85,52 @@ main{
   border-radius: 25px;
   margin: 10px;
 }
+/******* Dashboard ********/
+.dashboard-container{
+  border: 1px solid #ddd;
+  width: 470px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 4px;
+}
 
-/******* New Question ********/
-
+/******* Question ********/
+.question-container{
+  border: 1px solid #ddd;
+  margin: 0 0 15px 0;
+  border-radius: 4px;
+}
+.question-header{
+  border-bottom: 1px solid #ddd;
+  background-color: #f5f5f5;
+  padding: 12px 25px;
+  margin: 0;
+}
+.question{
+  padding: 15px 15px 15px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+.question .avatar{
+  min-height: 80px;
+  min-width: 80px;
+  margin: auto;
+}
+.question-content{
+  padding: 0 0 0 15px;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 55%;
+}
+.question-content h4{
+  margin: 0;
+}
+.question-content button{
+  border: 1px solid #06caa9;
+  color: #06caa9;
+  padding: 10px;
+  border-radius: 4px;
+}

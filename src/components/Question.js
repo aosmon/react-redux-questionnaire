@@ -4,15 +4,18 @@ import { formatQuestion } from '../utils/helpers'
 
 class Question extends Component{
 	render() {
-		// console.log(this.props);
+		//{this.props.id}
 		return (
-			<div className='question'>
-				<div>Question ID: {this.props.id}</div>
-				<div>Author: {this.props.question.author}</div>
-				<div>Author's avatar: {this.props.question.avatar}</div>
-				<div>Text: {this.props.question.optionOne.text}</div>
-				<div>Answered: {this.props.question.hasAnswered ? 'Yes' : 'No' } </div>
-
+			<div className='question-container'>
+				<h3 className='question-header'>{this.props.question.author} asks:</h3>
+				<div className='question'>
+					<img className='avatar' href={this.props.question.avatar} />
+					<div className='question-content'>
+						<h4>Would you rather...</h4>
+						<p>...{this.props.question.optionOne.text}...</p>
+						<button>View Poll</button>
+					</div>
+				</div>
 			</div>
 		)
 	}
