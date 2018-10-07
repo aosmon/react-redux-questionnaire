@@ -13,6 +13,7 @@ class App extends Component {
 	}
 
   render() {
+  	console.log(this.props)
     return (
       <Router>
       	<div>
@@ -22,7 +23,7 @@ class App extends Component {
 	        <main>
 	        	{this.props.loading === true
 	        		? null
-	        		: <Dashboard />
+	        		: <Dashboard authedUser={this.props.authedUser}/>
 	        	}
 	        </main>
         </div>
@@ -33,7 +34,8 @@ class App extends Component {
 
 function mapStateToProps({authedUser}){
 	return {
-		loading: authedUser===null
+		loading: authedUser===null,
+		authedUser
 	}
 }
 

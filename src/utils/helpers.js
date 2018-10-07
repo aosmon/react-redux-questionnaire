@@ -1,15 +1,16 @@
-function formatQuestion ({ optionOneText, optionTwoText, author }) {
+export function formatQuestion ( question, author, authedUser ) {
+
+  const { id, optionOne, optionTwo, timestamp } = question
+  const { name, avatarURL } = author
+
   return {
-    id: generateUID(),
-    timestamp: Date.now(),
-    author,
+    author: name,
+    id,
+    timestamp,
+    avatar: avatarURL,
     optionOne: {
-      votes: [],
-      text: optionOneText,
+      text: optionOne.text,
     },
-    optionTwo: {
-      votes: [],
-      text: optionTwoText,
-    }
+    hasAnswered: optionOne.votes.includes(authedUser) || optionTwo.votes.includes(authedUser)
   }
 }

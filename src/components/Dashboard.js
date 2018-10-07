@@ -1,16 +1,24 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Question from './Question'
 
 class Dashboard extends Component{
 	render() {
-		console.log(this.props);
 		return (
 			<div>
-				<h3>Questions</h3>
+				<h3>Answered Questions</h3>
 				<ul>
-					{this.props.questionIds.map((id)=>(
+					{this.props.answeredIds.map((id)=>(
 						<li key={id}>
-							<div>{id}</div>
+							<Question id={id} />
+						</li>
+					))}
+				</ul>
+				<h3>Unanswered Questions</h3>
+				<ul>
+					{this.props.unansweredIds.map((id)=>(
+						<li key={id}>
+							<Question id={id} />
 						</li>
 					))}
 				</ul>
@@ -19,10 +27,15 @@ class Dashboard extends Component{
 	}
 }
 
-function mapStateToProps({questions}){
+function mapStateToProps({questions}, {authedUser}){
+
 	return{
-		questionIds: Object.keys(questions)
-		.sort((a,b) => questions[b].timestamp - questions[a].timestamp)		
+		answeredIds: Object.keys(questions)
+		.filter((id)=>(questions[id].optionOne.votes.includes(authedUser) || questions[id].optionTwo.votes.includes(authedUser)))
+		.sort((a,b) => questions[b].timestamp - questions[a].timestamp),
+		unansweredIds: Object.keys(questions)
+		.filter((id)=>(!questions[id].optionOne.votes.includes(authedUser) && !questions[id].optionTwo.votes.includes(authedUser)))
+		.sort((a,b) => questions[b].timestamp - questions[a].timestamp)
 	}
 }
 
