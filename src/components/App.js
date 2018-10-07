@@ -4,6 +4,7 @@ import '../App.css'
 import Nav from './Nav'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
+import Dashboard from './Dashboard'
 
 class App extends Component {
 
@@ -18,13 +19,22 @@ class App extends Component {
 	      	<header>
 	          <Nav />
 	        </header>
-	        <div className='container'>
-	        	Test
-	        </div>
+	        <main>
+	        	{this.props.loading === true
+	        		? null
+	        		: <Dashboard />
+	        	}
+	        </main>
         </div>
       </Router>
     );
   }
 }
 
-export default connect()(App)
+function mapStateToProps({authedUser}){
+	return {
+		loading: authedUser===null
+	}
+}
+
+export default connect(mapStateToProps)(App)
