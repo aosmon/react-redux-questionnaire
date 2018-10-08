@@ -13,7 +13,7 @@ class Question extends Component{
 			<div className='question-container'>
 				<h3 className='question-header'>{this.props.question.author} asks:</h3>
 				<div className='question'>
-					<img className='avatar' href={this.props.question.avatar} />
+					<img className='avatar' href={this.props.question.avatar} alt='User avatar'/>
 					<div className='question-content'>
 						<h4>Would you rather...</h4>
 						<p>...{this.props.question.optionOne.text}...</p>

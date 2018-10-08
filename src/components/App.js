@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router} from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import '../App.css'
 import Nav from './Nav'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
+import NewQuestion from './NewQuestion'
+import QuestionDetails from './QuestionDetails'
 import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
@@ -17,7 +19,7 @@ class App extends Component {
   	console.log(this.props)
     return (
       <Router>
-      	<div>
+      	<Fragment>
 	      	<header>
 	          <Nav />
 	          <LoadingBar />
@@ -25,10 +27,14 @@ class App extends Component {
 	        <main>
 	        	{this.props.loading === true
 	        		? null
-	        		: <Dashboard authedUser={this.props.authedUser}/>
+	        		: <div>
+	        				<Route path='/' exact><Dashboard authedUser={this.props.authedUser}/></Route>
+	        				<Route path='/question/:id' component={QuestionDetails} />
+	        				<Route path='/newquestion' component={NewQuestion} />
+	        			</div>
 	        	}
 	        </main>
-        </div>
+        </Fragment>
       </Router>
     );
   }
