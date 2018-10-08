@@ -5,6 +5,7 @@ import Nav from './Nav'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
+import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
       	<div>
 	      	<header>
 	          <Nav />
+	          <LoadingBar />
 	        </header>
 	        <main>
 	        	{this.props.loading === true
