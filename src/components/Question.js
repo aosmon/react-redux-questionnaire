@@ -1,26 +1,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
+import { withRouter } from 'react-router-dom'
 
 class Question extends Component{
 
 	toQuestionDetails = (e, id) =>{
 		e.preventDefault();
+		this.props.history.push(`/questionDetails/${id}`)
 	}
 
 	render() {
+		const {id, question} = this.props;
+
 		return (
-			<div className='question-container'>
-				<h3 className='question-header'>{this.props.question.author} asks:</h3>
+				
 				<div className='question'>
-					<img className='avatar' href={this.props.question.avatar} alt='User avatar'/>
-					<div className='question-content'>
-						<h4>Would you rather...</h4>
-						<p>...{this.props.question.optionOne.text}...</p>
-						<button className='toQuestionDetails' onClick={(e)=>this.toQuestionDetails(e, this.props.id)}>View Poll</button>
+					<h3 className='header'>{question.author} asks:</h3>
+					<div className='content'>
+						<img className='avatar' href={question.avatar} alt='User avatar'/>
+						<div className='text'>
+							<h4>Would you rather...</h4>
+							<p>...{question.optionOne.text}...</p>
+							<button className='toQuestionDetails' onClick={(e)=>this.toQuestionDetails(e, id)}>View Poll</button>
+						</div>
 					</div>
 				</div>
-			</div>
 		)
 	}
 }
@@ -34,4 +39,4 @@ function mapStateToProps({questions, users, authedUser},{id}){
 	}
 }
 
-export default connect(mapStateToProps)(Question)
+export default withRouter(connect(mapStateToProps)(Question))
