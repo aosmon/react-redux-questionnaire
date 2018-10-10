@@ -241,4 +241,36 @@ button{
   line-height: 1.5em;
   width: 100%;
 }
-
+/******* New Question ********/
+.new-question .content{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 500;
+}
+.new-question .header{
+  text-align: center;
+}
+.new-question input{
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+.new-question span{
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+.new-question input::placeholder{
+  color: #ccc;
+  font-style: italic;
+}
+.new-question button{
+  background-color: #11b5af;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+}

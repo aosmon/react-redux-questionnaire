@@ -32,7 +32,9 @@ class App extends Component {
 	        					<Dashboard authedUser={this.props.authedUser}/>
 	        				)}/>
 	        				<Route path='/questionDetails/:id' component={QuestionDetails} />
-	        				<Route path='/newquestion' component={NewQuestion} />
+	        				<Route exact path='/newquestion' render={()=>(
+	        					<NewQuestion authedUser={this.props.authedUser}/>
+	        				)}/>
 	        			</div>
 	        	}
 	        </main>
