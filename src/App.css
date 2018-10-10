@@ -106,7 +106,6 @@ button{
 
 .nav ul {
   padding: 0;
-    line-height: 5em;
 }
 .nav li{
   padding: 0;
@@ -117,12 +116,14 @@ button{
 .nav li a{
   height: 100%;
   padding: 10px 20px 10px 20px;
+  line-height: 5em;
 }
-.nav .avatar {
-  height: 50px;
-  border-radius: 25px;
-  margin: 10px;
+.nav img{
+  height: 30px;
+  width: 30px;
+  margin: 0 0 -5px 20px;
 }
+
 /******* Dashboard ********/
 .dashboard.container{
   padding: 15px;
