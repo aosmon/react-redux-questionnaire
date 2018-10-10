@@ -4,9 +4,9 @@ export function formatQuestion ( question, author, authedUser ) {
   const { name, avatarURL } = author
   let answer = null;
   if(optionOne.votes.includes(authedUser)){
-    answer = optionOne
+    answer = 'optionOne'
   }else if(optionTwo.votes.includes(authedUser)){
-    answer = optionTwo
+    answer = 'optionTwo'
   }
 
   return {

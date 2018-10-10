@@ -25,7 +25,7 @@ ul li{
 
 header{
   width: 100%;
-  border-bottom: 3px solid #06caa9;
+  border-bottom: 3px solid #11b5af;
   top: 0px;
   height: 60px;
   position: fixed;
@@ -40,9 +40,18 @@ main{
   margin: 63px 0 0 0;
   padding: 15px;
 }
+h1, h2, h3, h4{
+  margin: 0;
+  padding: 0;
+}
+button{
+  border: 1px solid #11b5af;
+  padding: 10px;
+  border-radius: 4px;
+}
 .container{
   border: 1px solid #ddd;
-  width: 480px;
+  width: 530px;
   margin: 0 auto;
   padding: 0;
   border-radius: 4px;
@@ -53,15 +62,20 @@ main{
   padding: 12px 25px;
   margin: 0;
 }
-button{
-  border: 1px solid #06caa9;
-  padding: 10px;
-  border-radius: 4px;
+.content{
+  padding: 15px 15px 15px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
 }
+.avatar{
+  margin: auto;
+}
+
 /******* Navigation ********/
 
 .active {
-  background-color: #06caa9;
+  background-color: #11b5af;
   padding: 13px 20px;
   border-radius: 10px 10px 0 0;
   transform: perspective(4px) rotateX(1deg);
@@ -104,7 +118,7 @@ button{
   height: 100%;
   padding: 10px 20px 10px 20px;
 }
-.avatar {
+.nav .avatar {
   height: 50px;
   border-radius: 25px;
   margin: 10px;
@@ -121,17 +135,13 @@ button{
   padding: 0;
   border-radius: 4px;
 }
-.question .content, .question-details .content{
-  padding: 15px 15px 15px 0;
-  display: flex;
-  justify-content: space-between;
+.question .content{
   font-size: 0.9em;
   min-height: 120px;
 }
 .question .avatar{
   min-height: 80px;
   min-width: 80px;
-  margin: auto;
 }
 .question .text{
   padding: 0 0 0 15px;
@@ -141,31 +151,24 @@ button{
   justify-content: space-between;
   width: 55%;
 }
-.question .text h4{
-  margin: 0;
-}
 .question button{
-  border: 1px solid #06caa9;
-  color: #06caa9;
+  border: 1px solid #11b5af;
+  color: #11b5af;
   padding: 10px;
   border-radius: 4px;
 }
 .question button:hover{
-  background-color: #06caa9;
+  background-color: #11b5af;
   color: #fff;
 }
 /******* Question Details ********/
 .question-details .content{
-  padding: 15px 15px 15px 0;
-  display: flex;
-  justify-content: space-between;
   font-size: 1em;
   min-height: 180px;
 }
 .question-details .avatar{
   min-height: 80px;
-  min-width: 80px;
-  margin: auto;  
+  min-width: 80px; 
 }
 .question-details .text{
   padding: 0 0 0 15px;
@@ -176,13 +179,65 @@ button{
   width: 65%;
   font-weight: 500;
 }
-.question-details .text h2{
-  margin: 0;
-  padding: 0;
-}
 .question-details .text button{
-  background-color: #06caa9;
+  background-color: #11b5af;
   color: #fff;
   font-size: 1em;
   font-weight: 600;
 }
+/******* Question Results ********/
+.question-results .content{
+  min-height: 350px;
+}
+.question-results .text{
+  padding: 0 0 0 15px;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 65%;
+  font-weight: 500;
+}
+.result{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 20px;
+  min-height: 40%;
+  font-weight: 700;
+  text-align: center;
+  background-color: #fafafa;
+}
+.result > p{
+  text-align: left;
+  margin: 0 0 15px 0;
+}
+.result.chosen{
+  border: 1px solid #11b5af;
+  background-color: #11b5af26;
+  color: #0a9079;
+}
+.meter { 
+  height: 25px;
+  position: relative;
+  background: #ddd;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0 0 5px 0;
+}
+.meter > span {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background-color: #11b5af;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  line-height: 1.5em;
+  width: 100%;
+}
+
