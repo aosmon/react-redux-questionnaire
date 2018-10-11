@@ -274,3 +274,61 @@ button{
   font-size: 1em;
   font-weight: 600;
 }
+/******* LeaderBoard ********/
+.leaderboard.container{
+  padding: 15px;
+}
+.user{
+  margin: 0 0 15px 0;
+  border: 1px solid #ddd;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.user .text{
+  padding: 0 15px 0 15px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  font-weight: 500;
+  margin: 0;
+}
+.user .text > div{
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+.user .text > div > p{
+  margin: 10px 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+/*.user .text > div > p{*/
+.user .avatar{
+  min-height: 80px;
+  min-width: 80px;
+}
+.user .score{
+  width: 20%;
+  margin: 0 0 0 15px;
+}
+.user .score > div{
+  padding: 15px;
+}
+.user .score .data{
+  background-color: #11b5af;
+  margin: auto;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 22.5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3em;
+  line-height: 1.1em;
+  text-align: center;
+}
+

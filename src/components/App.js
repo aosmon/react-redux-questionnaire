@@ -5,6 +5,7 @@ import Nav from './Nav'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
+import LeaderBoard from './LeaderBoard'
 import NewQuestion from './NewQuestion'
 import QuestionDetails from './QuestionDetails'
 import LoadingBar from 'react-redux-loading'
@@ -32,6 +33,7 @@ class App extends Component {
 	        					<Dashboard authedUser={this.props.authedUser}/>
 	        				)}/>
 	        				<Route path='/questionDetails/:id' component={QuestionDetails} />
+	        				<Route path='/leaderboard' component={LeaderBoard} />
 	        				<Route exact path='/newquestion' render={()=>(
 	        					<NewQuestion authedUser={this.props.authedUser}/>
 	        				)}/>
