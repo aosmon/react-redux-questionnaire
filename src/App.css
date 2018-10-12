@@ -174,11 +174,14 @@ button{
 .question-details .text{
   padding: 0 0 0 15px;
   border-left: 1px solid #ddd;
+  width: 65%;
+  font-weight: 500;
+}
+.question-details form{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 65%;
-  font-weight: 500;
+  height: 100%;  
 }
 .question-details .text button{
   background-color: #11b5af;

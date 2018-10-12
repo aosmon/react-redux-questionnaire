@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class NewQuestion extends Component{
 
 	handleSubmitQuestion = () => {
-		
+
 	}
 	
 	render() {

@@ -1,12 +1,33 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
+import { handleSaveAnswer } from '../actions/questions'
 import { withRouter } from 'react-router-dom'
 
 class QuestionDetails extends Component{
 
-	handleSubmitAnswer = (e) => {
+	state = {
+		answer: ''
+	}
 
+	handleChange = (e) => {
+	  this.setState({
+	    answer: e.target.value
+	  });
+	}
+
+	handleSubmit = (e) => {
+		e.preventDefault()
+
+		const { dispatch, question, authedUser } = this.props
+		const qid = question.id
+		const { answer } = this.state
+
+		dispatch(handleSaveAnswer({authedUser, qid, answer}))
+
+	  this.setState({
+	    answer: ''
+	  });		
 	}
 
 	render() {
@@ -57,16 +78,28 @@ class QuestionDetails extends Component{
 					<div className='content'>
 						<img className='avatar' href={question.avatar} alt='User avatar'/>
 						<div className='text'>
-							<h2>Would You Rather ...</h2>
-							<div>
-								<input type="radio" name="options" value="{question.optionOne.text}"/>
-	            	{question.optionOne.text}
-	            </div>
-	            <div>
-	            	<input type="radio" name="options" value="{question.optionTwo.text}"/>
-	            	{question.optionTwo.text}
-	            </div>
-							<button className='submit' onClick={(e)=>this.handleSubmitAnswer(e)}>Submit</button>
+							<form onSubmit={this.handleSubmit}>
+								<h2>Would You Rather ...</h2>
+								<label>
+									<input type="radio" 
+										name="options" 
+										value="optionOne"
+										onChange={this.handleChange}
+									/>
+		            	{question.optionOne.text}
+		            </label>
+		            <label>
+		            	<input type="radio" 
+			            	name="options" 
+			            	value="optionTwo"
+			            	onChange={this.handleChange}
+		            	/>
+		            	{question.optionTwo.text}
+		            </label>
+								<button 
+								className='submit'
+								disabled={this.state.answer === ''}>Submit</button>
+							</form>
 						</div>
 					</div>
 				</div>

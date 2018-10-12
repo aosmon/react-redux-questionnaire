@@ -9,6 +9,7 @@ import LeaderBoard from './LeaderBoard'
 import NewQuestion from './NewQuestion'
 import QuestionDetails from './QuestionDetails'
 import LoadingBar from 'react-redux-loading'
+import Login from './Login'
 
 class App extends Component {
 
