@@ -331,4 +331,49 @@ button{
   line-height: 1.1em;
   text-align: center;
 }
+/******* Login ********/
+
+.login .content{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 500;
+}
+.login h1{
+  font-size: 1em;
+  font-weight: 800;
+}
+.login .header{
+  text-align: center;
+}
+.login img{
+  height: 120px;
+  width: 120px;
+  margin: auto;
+}
+.login select{
+  margin: 15px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  position: relative;
+  background-color: #fff;
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;       /* remove default arrow */
+  font-weight: 600;
+}
+.login button{
+  background-color: #11b5af;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+}
+.login h2{
+  text-align: center;
+  color: #11b5af;
+  margin: 20px 0 0 0;
+}
 
