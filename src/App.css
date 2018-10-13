@@ -49,6 +49,12 @@ button{
   padding: 10px;
   border-radius: 4px;
 }
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;  
+}
 .container{
   border: 1px solid #ddd;
   width: 530px;
@@ -176,12 +182,6 @@ button{
   border-left: 1px solid #ddd;
   width: 65%;
   font-weight: 500;
-}
-.question-details form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;  
 }
 .question-details .text button{
   background-color: #11b5af;
