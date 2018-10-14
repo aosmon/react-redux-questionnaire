@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {handleAddQuestion} from '../actions/questions'
+import { Redirect } from 'react-router-dom'
+
 class NewQuestion extends Component{
 
 	state = {
 		optionOneText: '',
 		optionTwoText: '',
+		toHome: false
 	}
 
 	handleChange = (e, option) => {
@@ -22,11 +25,21 @@ class NewQuestion extends Component{
 		const { dispatch} = this.props
 
 		dispatch(handleAddQuestion({optionOneText, optionTwoText}))
+
+		this.setState(() => ({
+			optionOneText: '',
+			optionTwoText: '',
+			toHome: true,
+		}))
 	}
 
 	render() {
 
-		const {optionOneText, optionTwoText} = this.state
+		const {optionOneText, optionTwoText, toHome} = this.state
+
+    if (toHome === true) {
+      return <Redirect to='/' />
+    }
 
 		return (
 			<div className='container'>
@@ -41,12 +54,14 @@ class NewQuestion extends Component{
 								type="text" 
 								name="option1" 
 								onChange={(e)=>this.handleChange(e, "optionOneText")}
+								maxLength={90}
 								placeholder='Enter Option One Text Here'/>
 							<span>OR</span>
             	<input 
 	            	type="text" 
 	            	name="option2" 
 	            	onChange={(e)=>this.handleChange(e, "optionTwoText")}
+	            	maxLength={90}
 	            	placeholder='Enter Option Two Text Here'/>	   
 							<button 
 								className='submit'
@@ -66,8 +81,7 @@ class NewQuestion extends Component{
 function mapStateToProps({questions}, {authedUser}){
 
   return {
-  	authedUser,
-    questions
+  	authedUser
   }
 }
 
