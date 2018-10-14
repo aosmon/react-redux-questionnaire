@@ -1,12 +1,35 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
 import avatar from '../images/479477-128.png'
+import { signout } from '../actions/authedUser'
 
 class Nav extends Component {
+
+  state = {
+    redirect: false,
+  }
+
+  handleSignout = (e) => {
+    e.preventDefault()
+
+    const { dispatch} = this.props
+    dispatch(signout())
+
+    this.setState(()=>({
+      redirect: true
+    }))
+  }
+
   render(){
 
     const {authedUserName, authedUserURL, authedUser} = this.props;
+    const { redirect } = this.state
+    console.log(authedUser)
+
+    if (redirect || authedUser==={}) {
+      return <Redirect to='/login' />
+    }
 
     return (
       <nav className='nav'>
@@ -30,13 +53,13 @@ class Nav extends Component {
         {authedUser && (
         <ul>
           <li className='username'>
-            <NavLink to='/authedUser'>     
+            <NavLink to='#'>     
               <span>Hello, {authedUserName}</span>      
               <img src={avatar} alt='u'/>
             </NavLink>
           </li>
            <li>
-            <NavLink to='/login'>
+            <NavLink to='#' onClick={this.handleSignout}>
               Logout
             </NavLink>
           </li>
@@ -50,7 +73,7 @@ class Nav extends Component {
 }
 
 function mapStateToProps({authedUser, users}){
-  if(authedUser){
+  if(!authedUser==={}){
     const user = users[authedUser]
 
     return {
@@ -60,7 +83,7 @@ function mapStateToProps({authedUser, users}){
     }    
   }
   return{
-    authedUser: '',
+    authedUser: {},
     authedUserName: '',
     authedUserURL: '',
 
