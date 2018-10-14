@@ -80,9 +80,8 @@ form{
 
 /******* Navigation ********/
 
-.active {
+.nav .active {
   background-color: #11b5af;
-  padding: 13px 20px;
   border-radius: 10px 10px 0 0;
   transform: perspective(4px) rotateX(1deg);
   color: #fff;
@@ -132,9 +131,38 @@ form{
 
 /******* Dashboard ********/
 .dashboard.container{
+  padding: 0;
+}
+.dashboard .content{
+  width: 100%;
   padding: 15px;
 }
+.dashboard .content ul{
+  width: 100%;
+}
 
+.dashboard .tabs{
+  width: 100%;
+}
+
+.dashboard .tab{
+  width: 50%;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  font-weight: 700;
+  font-size: 1em;
+  border-radius: 0;
+  color: #777;
+  background-color: #f5f5f5;
+}
+.dashboard .tab:first-child{
+  border-right: 1px solid #ddd;
+}
+.dashboard .tab.active{
+  color: #11b5af;
+  border-bottom: 0;
+  background-color: #fff;
+}
 /******* Question ********/
 .question{
   margin: 0 0 15px 0;
