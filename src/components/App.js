@@ -30,14 +30,10 @@ class App extends Component {
 	        	{this.props.loading === true
 	        		? null
 	        		: <div>
-	        				<Route exact path='/' render={()=>(
-	        					<Dashboard authedUser={this.props.authedUser}/>
-	        				)}/>
+	        				<Route path='/' exact component={Dashboard} />
 	        				<Route path='/questionDetails/:id' component={QuestionDetails} />
 	        				<Route path='/leaderboard' component={LeaderBoard} />
-	        				<Route exact path='/newquestion' render={()=>(
-	        					<NewQuestion authedUser={this.props.authedUser}/>
-	        				)}/>
+	        				<Route path='/newquestion' component={NewQuestion} />
 	        			</div>
 	        	}
 	        </main>
