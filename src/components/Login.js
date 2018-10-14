@@ -1,16 +1,43 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ReduxLogo from '../images/ReduxLogo.jpg'
+import { setAuthedUser } from '../actions/authedUser'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component{
+
+	state = {
+		username: '',
+		loggedIn: false
+	}
 	
-	handleLogout= () => {
-		
+	handleSignin = (e) => {
+		e.preventDefault()
+
+		const {username} = this.state
+		const { dispatch} = this.props
+
+		dispatch(setAuthedUser(username))
+		this.setState(()=>({
+			loggedIn: true
+		}))
+
+	}
+
+	handleChange = (e) => {
+		const selected = e.target.value
+		this.setState(()=>({
+			username: selected
+		}))
 	}
 
 	render() {
-		console.log(this.props);
-		const {users} = this.props
+		const {username, loggedIn} = this.state
+		const {users, userIds} = this.props
+
+		if(loggedIn){
+			return <Redirect to='/' />
+		}
 
 		return (
 			<div className='login container'>
@@ -20,16 +47,26 @@ class Login extends Component{
 				</div>
 				<div className='content'>
 					<img src={ReduxLogo} />
-					<h2>Sign in</h2>
-					<select name="users" placeholder='Select User'>
-						<option value=''>Select User</option>
-						{this.props.userIds.map((id)=>(
-							 <option value={id}>
-							 	{users[id].name}
-							 </option>
-						))}
-					</select>
-					<button className='login' onClick={(e)=>this.handleLogout(e)}>Sign In</button>
+					<form onSubmit={(e)=>this.handleSignin(e)}>
+						<h2>Sign in</h2>
+						<select 
+							name="users" 
+							placeholder='Select User'
+							value={username}
+							onChange={(e)=>this.handleChange(e)}>
+							<option value='' disabled>Select User</option>
+							{userIds.map((id)=>(
+								 <option value={id} key={id}>
+								 	{users[id].name}
+								 </option>
+							))}
+						</select>
+						<button 
+							className='login' 
+							type='submit'
+							disabled={this.state.username===''}
+						>Sign In</button>
+					</form>
 				</div>
 			</div>
 		)
