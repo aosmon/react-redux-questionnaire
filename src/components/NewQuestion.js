@@ -41,6 +41,9 @@ class NewQuestion extends Component{
       return <Redirect to='/' />
     }
 
+    const optionOneLeft = 90 - optionOneText.length
+    const optionTwoLeft = 90 - optionTwoText.length
+
 		return (
 			<div className='container'>
 
@@ -56,6 +59,11 @@ class NewQuestion extends Component{
 								onChange={(e)=>this.handleChange(e, "optionOneText")}
 								maxLength={90}
 								placeholder='Enter Option One Text Here'/>
+									<div className='question-length'>
+								{optionOneLeft <= 30 && (
+									optionOneLeft
+								)}
+									</div>
 							<span>OR</span>
             	<input 
 	            	type="text" 
@@ -63,6 +71,11 @@ class NewQuestion extends Component{
 	            	onChange={(e)=>this.handleChange(e, "optionTwoText")}
 	            	maxLength={90}
 	            	placeholder='Enter Option Two Text Here'/>	   
+									<div className='question-length'>
+								{optionTwoLeft <= 30 && (
+									optionTwoLeft
+								)}
+									</div>
 							<button 
 								className='submit'
 								type='submit'
