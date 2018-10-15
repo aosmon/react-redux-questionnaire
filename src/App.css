@@ -48,6 +48,8 @@ button{
   border: 1px solid #11b5af;
   padding: 10px;
   border-radius: 4px;
+  font-size: 1em;
+  font-weight: 600;
 }
 form{
   display: flex;
@@ -214,7 +216,6 @@ form{
 .question-details .text button{
   background-color: #11b5af;
   color: #fff;
-  font-size: 1em;
   font-weight: 600;
 }
 /******* Question Results ********/
@@ -302,8 +303,6 @@ form{
 .new-question button{
   background-color: #11b5af;
   color: #fff;
-  font-size: 1em;
-  font-weight: 600;
   margin: 10px 0 0 0;
 }
 .question-length{
@@ -407,8 +406,6 @@ form{
 .login button{
   background-color: #11b5af;
   color: #fff;
-  font-size: 1em;
-  font-weight: 600;
 }
 .login h2{
   text-align: center;
