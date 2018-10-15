@@ -15,7 +15,7 @@ class Nav extends Component {
 
   render(){
 
-    const {authedUser} = this.props
+    const {authedUser, username, avatarURL} = this.props
 
     if (authedUser===null) {
       console.log('redirecting')
@@ -45,8 +45,8 @@ class Nav extends Component {
         <ul>
           <li className='username'>
             <NavLink to='#'>     
-              <span>Hello, {authedUser}</span>      
-              <img src={avatar} alt='u'/>
+              <span>Hello, {username}</span>      
+              <img src={'/images/' + this.props.avatarURL} alt='User avatar'/>
             </NavLink>
           </li>
            <li>
@@ -64,10 +64,16 @@ class Nav extends Component {
 }
 
 function mapStateToProps({authedUser, users}){
-
+  if (authedUser !== null) {
+    return {
+      authedUser,
+      username: users[authedUser].name,
+      avatarURL: users[authedUser].avatarURL
+    }
+  }
   return {
-    authedUser,
-    username: users[authedUser]
+    username: '',
+    avatarURL: ''
   }
 }
 

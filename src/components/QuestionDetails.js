@@ -44,7 +44,7 @@ class QuestionDetails extends Component{
 				<div className='question-results'>
 					<h4 className='header'>Asked by {question.author}:</h4>
 					<div className='content'>
-						<img className='avatar' href={question.avatar} alt='User avatar'/>
+						<img className='avatar' src={'/images/' + question.avatar} alt='User avatar'/>
 						<div className='text'>
 							<h2>Results:</h2>
 							<div className={question.answer === 'optionOne' ? 'result chosen' : 'result'}>
@@ -76,7 +76,7 @@ class QuestionDetails extends Component{
 				<div className='question-details'>
 					<h4 className='header'>{question.author} asks:</h4>
 					<div className='content'>
-						<img className='avatar' href={question.avatar} alt='User avatar'/>
+						<img className='avatar' src={'/images/' + question.avatar} alt='User avatar'/>
 						<div className='text'>
 							<form onSubmit={this.handleSubmit}>
 								<h2>Would You Rather ...</h2>

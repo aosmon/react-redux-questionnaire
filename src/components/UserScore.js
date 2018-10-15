@@ -14,7 +14,7 @@ class UserScore extends Component{
 			<div  className='user'>
 
 						<div className='content'>
-							<img className='avatar' href={users[id].avatarURL} alt='User avatar'/>
+							<img className='avatar' src={'/images/' + users[id].avatarURL} alt='User avatar'/>
 							<div className='text'>
 								<h2>{users[id].name}</h2>
 								<div>

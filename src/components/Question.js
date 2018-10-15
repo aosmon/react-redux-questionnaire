@@ -11,14 +11,15 @@ class Question extends Component{
 	}
 
 	render() {
-		const {id, question} = this.props;
+		const {id, question, avatarURL} = this.props;
+		console.log(avatarURL)
 
 		return (
 				
 				<div className='question'>
 					<h3 className='header'>{question.author} asks:</h3>
 					<div className='content'>
-						<img className='avatar' href={question.avatar} alt='User avatar'/>
+						<img className='avatar' src={'/images/' + avatarURL} alt='User avatar'/>
 						<div className='text'>
 							<h4>Would you rather...</h4>
 							<p>...{question.optionOne.text}...</p>
@@ -35,7 +36,8 @@ function mapStateToProps({questions, users, authedUser},{id}){
 
 	return {
 		authedUser,
-		question: formatQuestion(question, users[question.author], authedUser)
+		question: formatQuestion(question, users[question.author], authedUser),
+		avatarURL: users[question.author].avatarURL
 	}
 }
 
