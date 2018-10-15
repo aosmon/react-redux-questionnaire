@@ -64,6 +64,7 @@ class Dashboard extends Component{
 function mapStateToProps({questions, authedUser}){
 
 	return{
+		authedUser,
 		answeredIds: Object.keys(questions)
 		.filter((id)=>(questions[id].optionOne.votes.includes(authedUser) || questions[id].optionTwo.votes.includes(authedUser)))
 		.sort((a,b) => questions[b].timestamp - questions[a].timestamp),

@@ -18,7 +18,7 @@ class App extends Component {
 	}
 
   render() {
-  	console.log(this.props)
+
     return (
       <Router>
       	<Fragment>
@@ -27,14 +27,18 @@ class App extends Component {
 	          <LoadingBar />
 	        </header>
 	        <main>
-	        	{this.props.loading === true
-	        		? null
-	        		: <div>
-	        				<Route path='/' exact component={Dashboard} />
-	        				<Route path='/questionDetails/:id' component={QuestionDetails} />
-	        				<Route path='/leaderboard' component={LeaderBoard} />
-	        				<Route path='/newquestion' component={NewQuestion} />
-	        			</div>
+	        	{this.props.authedUser === null
+	        		? <Login />
+	        		:	(
+			        	this.props.loading === true
+		        		? null
+		        		: <div>
+		        				<Route path='/' exact component={Dashboard} />
+		        				<Route path='/questionDetails/:id' component={QuestionDetails} />
+		        				<Route path='/leaderboard' component={LeaderBoard} />
+		        				<Route path='/newquestion' component={NewQuestion} />
+		        			</div>	        	
+	        		)
 	        	}
 	        </main>
         </Fragment>
@@ -43,9 +47,9 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({authedUser}){
+function mapStateToProps({authedUser, questions, users}){
 	return {
-		loading: authedUser===null,
+		loading: questions==={} || users==={},
 		authedUser
 	}
 }

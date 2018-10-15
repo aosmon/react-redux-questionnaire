@@ -6,28 +6,19 @@ import { signout } from '../actions/authedUser'
 
 class Nav extends Component {
 
-  state = {
-    redirect: false,
-  }
-
   handleSignout = (e) => {
     e.preventDefault()
 
     const { dispatch} = this.props
     dispatch(signout())
-
-    this.setState(()=>({
-      redirect: true
-    }))
   }
 
   render(){
 
-    const {authedUserName, authedUserURL, authedUser} = this.props;
-    const { redirect } = this.state
-    console.log(authedUser)
+    const {authedUser} = this.props
 
-    if (redirect || authedUser==={}) {
+    if (authedUser===null) {
+      console.log('redirecting')
       return <Redirect to='/login' />
     }
 
@@ -54,7 +45,7 @@ class Nav extends Component {
         <ul>
           <li className='username'>
             <NavLink to='#'>     
-              <span>Hello, {authedUserName}</span>      
+              <span>Hello, {authedUser}</span>      
               <img src={avatar} alt='u'/>
             </NavLink>
           </li>
@@ -73,20 +64,10 @@ class Nav extends Component {
 }
 
 function mapStateToProps({authedUser, users}){
-  if(!authedUser==={}){
-    const user = users[authedUser]
 
-    return {
-      authedUser,
-      authedUserName: user.name,
-      authedUserURL: user.avatarURL,
-    }    
-  }
-  return{
-    authedUser: {},
-    authedUserName: '',
-    authedUserURL: '',
-
+  return {
+    authedUser,
+    username: users[authedUser]
   }
 }
 

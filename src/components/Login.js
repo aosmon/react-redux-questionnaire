@@ -7,8 +7,7 @@ import { Redirect } from 'react-router-dom'
 class Login extends Component{
 
 	state = {
-		username: '',
-		loggedIn: false
+		username: ''
 	}
 	
 	handleSignin = (e) => {
@@ -18,10 +17,6 @@ class Login extends Component{
 		const { dispatch} = this.props
 
 		dispatch(setAuthedUser(username))
-		this.setState(()=>({
-			loggedIn: true
-		}))
-
 	}
 
 	handleChange = (e) => {
@@ -32,10 +27,10 @@ class Login extends Component{
 	}
 
 	render() {
-		const {username, loggedIn} = this.state
-		const {users, userIds} = this.props
+		const {username} = this.state
+		const {users, userIds, authedUser} = this.props
 
-		if(loggedIn){
+		if(authedUser){
 			return <Redirect to='/' />
 		}
 
@@ -46,7 +41,7 @@ class Login extends Component{
 					<p>Please sign in to continue</p>
 				</div>
 				<div className='content'>
-					<img src={ReduxLogo} />
+					<img src={ReduxLogo} alt=''/>
 					<form onSubmit={(e)=>this.handleSignin(e)}>
 						<h2>Sign in</h2>
 						<select 
