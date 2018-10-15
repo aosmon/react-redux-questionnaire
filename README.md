@@ -2,11 +2,11 @@
 
 A React/Redux web app that lets users play the “Would You Rather?” game, where they can answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard. The project emphasizes using React and Redux together to build the application, that allows to improve the predictability of the application’s state; establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components. Provided starter code consists of a Data.js file, which represents a fake database and contains methods to access the data. 
 
-<img width="652" alt="01_wouldyourather_homepage" src="https://user-images.githubusercontent.com/26148396/46965537-27135a00-d079-11e8-864b-7da5e35cd140.png">
-<img width="650" alt="02_wouldyourather_question" src="https://user-images.githubusercontent.com/26148396/46965539-27abf080-d079-11e8-88c7-503a180a6c8f.png">
-<img width="650" alt="03_wouldyourather_pollresults" src="https://user-images.githubusercontent.com/26148396/46965540-27abf080-d079-11e8-83b9-b3b0f99792a6.png">
-<img width="649" alt="04_wouldyourather_leaderboard" src="https://user-images.githubusercontent.com/26148396/46965541-27abf080-d079-11e8-920b-41bdf04f85fc.png">
-<img width="650" alt="00_wouldyourather_login" src="https://user-images.githubusercontent.com/26148396/46965542-27abf080-d079-11e8-9769-0d5c0240fd86.png">
+<img width="350" alt="00_wouldyourather_login" src="https://user-images.githubusercontent.com/26148396/46965768-bfa9da00-d079-11e8-810b-d76c77949cde.png">
+<img width="350" alt="01_wouldyourather_homepage" src="https://user-images.githubusercontent.com/26148396/46965781-c5072480-d079-11e8-8380-ebe174579360.png">
+<img width="350" alt="02_wouldyourather_question" src="https://user-images.githubusercontent.com/26148396/46965782-c5072480-d079-11e8-90be-d6447dfe4b27.png">
+<img width="350" alt="03_wouldyourather_pollresults" src="https://user-images.githubusercontent.com/26148396/46965783-c5072480-d079-11e8-9a5a-71dba00f34cb.png">
+<img width="350" alt="04_wouldyourather_leaderboard" src="https://user-images.githubusercontent.com/26148396/46965784-c5072480-d079-11e8-8ea5-8d3841c0b406.png">
 
 ## App Functionality
 
