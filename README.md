@@ -38,3 +38,6 @@ Install all project dependencies with npm install
 - `npm install --save redux`
 - `npm install --save redux-thunk`
 - Start the development server with npm start
+
+## References
+Avatar images: https://www.iconfinder.com
