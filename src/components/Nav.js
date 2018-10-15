@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink, Redirect } from 'react-router-dom'
-import avatar from '../images/479477-128.png'
 import { signout } from '../actions/authedUser'
+import { withRouter } from 'react-router-dom'
+
 
 class Nav extends Component {
 
@@ -26,17 +27,17 @@ class Nav extends Component {
       <nav className='nav'>
         <ul className='app-nav'>
           <li>
-            <NavLink to='/' exact activeClassName='active'>
+            <NavLink to='/' exact activeClassName='nav-active'>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to='/newquestion' activeClassName='active'>
+            <NavLink to='/newquestion' activeClassName='nav-active'>
               New Question
             </NavLink>
           </li>
           <li>
-            <NavLink to='/leaderboard' activeClassName='active'>
+            <NavLink to='/leaderboard' activeClassName='nav-active'>
               Leader Board
             </NavLink>
           </li>
@@ -46,7 +47,7 @@ class Nav extends Component {
           <li className='username'>
             <NavLink to='#'>     
               <span>Hello, {username}</span>      
-              <img src={'/images/' + this.props.avatarURL} alt='User avatar'/>
+              <img src={'/images/' + avatarURL} alt='User avatar'/>
             </NavLink>
           </li>
            <li>
@@ -77,4 +78,4 @@ function mapStateToProps({authedUser, users}){
   }
 }
 
-export default connect(mapStateToProps)(Nav)
+export default withRouter(connect(mapStateToProps)(Nav))

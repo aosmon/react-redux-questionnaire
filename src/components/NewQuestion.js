@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {handleAddQuestion} from '../actions/questions'
 import { Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class NewQuestion extends Component{
 
@@ -98,4 +99,4 @@ function mapStateToProps({authedUser}){
   }
 }
 
-export default connect(mapStateToProps)(NewQuestion)
+export default withRouter(connect(mapStateToProps)(NewQuestion))

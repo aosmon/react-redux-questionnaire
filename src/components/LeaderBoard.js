@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import UserScore from './UserScore'
+import { withRouter } from 'react-router-dom'
 
 class LeaderBoard extends Component{
 	
@@ -30,4 +31,4 @@ function mapStateToProps({users}){
   }
 }
 
-export default connect(mapStateToProps)(LeaderBoard)
+export default withRouter(connect(mapStateToProps)(LeaderBoard))

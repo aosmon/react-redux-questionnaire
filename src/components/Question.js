@@ -12,7 +12,6 @@ class Question extends Component{
 
 	render() {
 		const {id, question, avatarURL} = this.props;
-		console.log(avatarURL)
 
 		return (
 				

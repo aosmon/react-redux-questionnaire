@@ -82,10 +82,9 @@ form{
 
 /******* Navigation ********/
 
-.nav .active {
+.nav-active {
   background-color: #11b5af;
   border-radius: 10px 10px 0 0;
-  transform: perspective(4px) rotateX(1deg);
   color: #fff;
 }
 .nav{
