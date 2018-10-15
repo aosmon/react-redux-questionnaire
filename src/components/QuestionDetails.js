@@ -51,7 +51,7 @@ class QuestionDetails extends Component{
 	            	<p>Would you rather {question.optionOne.text}?</p>
 	            	<div className='data'>
 	            		<div className="meter">
-  									<span style={{width: (option1/(option1+option2)*100)+'%'}}>{(option1/(option1+option2)*100)}%</span>
+  									<span style={{width: (option1/(option1+option2)*100)+'%'}}>{(option1/(option1+option2)*100).toFixed(0)}%</span>
 									</div>
 	            		{option1} out of {option1+option2} votes
 	            	</div>
@@ -60,7 +60,7 @@ class QuestionDetails extends Component{
 	            	<p>Would you rather {question.optionTwo.text}?</p>
 	            	<div className='data'>
 	            		<div className="meter">
-  									<span style={{width: (option2/(option1+option2)*100)+'%'}}>{(option2/(option1+option2)*100)}%</span>
+  									<span style={{width: (option2/(option1+option2)*100)+'%'}}>{(option2/(option1+option2)*100).toFixed(0)}%</span>
 									</div>
 	            		{option2} out of {option1+option2} votes
 	            	</div>
