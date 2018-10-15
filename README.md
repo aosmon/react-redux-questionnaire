@@ -2,7 +2,7 @@
 
 A React/Redux web app that lets users play the “Would You Rather?” game, where they can answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard. The project emphasizes using React and Redux together to build the application, that allows to improve the predictability of the application’s state; establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components. Provided starter code consists of a Data.js file, which represents a fake database and contains methods to access the data. 
 
-# App Functionality
+## App Functionality
 
 - Login: User is presented with the Login page that lets the user select a name from the list of existing users.
 - Homepage: Once the user logs in, the home page is shown where user can toggle between his/her answered and unanswered polls. The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom).
@@ -21,7 +21,7 @@ A React/Redux web app that lets users play the “Would You Rather?” game, whe
 - LeaderBoard: To see stats for each user, a leaderboard is available at the /leaderboard route. Users are ordered in descending order based on the sum of the number of questions they’ve asked and the number of questions they’ve answered. The more questions users ask and answer, the higher up users move.
 
 
-# Installation and Launch Instructions
+## Installation and Launch Instructions
 
 - Clone or download the repo.
 - Open a terminal in project directory.
