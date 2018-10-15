@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
 import { handleSaveAnswer } from '../actions/questions'
 import { withRouter } from 'react-router-dom'
+import Error404 from './Error404'
 
 class QuestionDetails extends Component{
 
@@ -31,6 +32,13 @@ class QuestionDetails extends Component{
 	}
 
 	render() {
+
+		if(this.props.error404){
+	    return (
+	      <Error404 />
+	    );
+		}
+
 		const {question} = this.props
 		const option1 = question.optionOne.votes.length
 		const option2 = question.optionTwo.votes.length
@@ -114,9 +122,16 @@ function mapStateToProps({questions, users, authedUser}, props){
 	const { id } = props.match.params
 	const question = questions[id]
 
+	if(question===undefined){
+		return {
+			error404: true
+		}
+	}
+
 	return {
 		authedUser,
-		question: formatQuestion(question, users[question.author], authedUser)
+		question: formatQuestion(question, users[question.author], authedUser),
+		error404: false
 	}
 }
 

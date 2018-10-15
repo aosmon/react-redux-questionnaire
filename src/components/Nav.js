@@ -19,7 +19,6 @@ class Nav extends Component {
     const {authedUser, username, avatarURL} = this.props
 
     if (authedUser===null) {
-      console.log('redirecting')
       return <Redirect to='/login' />
     }
 
