@@ -59,8 +59,6 @@ class Nav extends Component {
         )}
       </nav>
     )
-
-
   }
 }
 

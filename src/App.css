@@ -369,7 +369,9 @@ form{
   text-align: center;
 }
 /******* Login ********/
-
+.login.container{
+  margin: 70px auto 0 auto;
+}
 .login .content{
   padding: 15px;
   display: flex;
