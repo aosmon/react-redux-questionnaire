@@ -7,7 +7,7 @@ class Question extends Component{
 
 	toQuestionDetails = (e, id) =>{
 		e.preventDefault();
-		this.props.history.push(`/questionDetails/${id}`)
+		this.props.history.push(`/questions/${id}`)
 	}
 
 	render() {
