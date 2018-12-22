@@ -2,11 +2,14 @@
 
 A React/Redux web app that lets users play the “Would You Rather?” game, where they can answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard. The project emphasizes using React and Redux together to build the application, that allows to improve the predictability of the application’s state; establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components. Provided starter code consists of a Data.js file, which represents a fake database and contains methods to access the data. 
 
-<img width="350" alt="00_wouldyourather_login" src="https://user-images.githubusercontent.com/26148396/46965768-bfa9da00-d079-11e8-810b-d76c77949cde.png">
-<img width="350" alt="01_wouldyourather_homepage" src="https://user-images.githubusercontent.com/26148396/46965781-c5072480-d079-11e8-8380-ebe174579360.png">
-<img width="350" alt="02_wouldyourather_question" src="https://user-images.githubusercontent.com/26148396/46965782-c5072480-d079-11e8-90be-d6447dfe4b27.png">
-<img width="350" alt="03_wouldyourather_pollresults" src="https://user-images.githubusercontent.com/26148396/46965783-c5072480-d079-11e8-9a5a-71dba00f34cb.png">
-<img width="350" alt="04_wouldyourather_leaderboard" src="https://user-images.githubusercontent.com/26148396/46965784-c5072480-d079-11e8-8ea5-8d3841c0b406.png">
+<img width="1102" alt="quiestionnaire1" src="https://user-images.githubusercontent.com/26148396/50368094-56e84d80-0553-11e9-9d03-011d540a5246.png">
+<img width="1102" alt="questionnaire2" src="https://user-images.githubusercontent.com/26148396/50368095-56e84d80-0553-11e9-9ce3-84d01dcca23d.png">
+<img width="1102" alt="questionnaire3" src="https://user-images.githubusercontent.com/26148396/50368096-56e84d80-0553-11e9-9c90-27b726f82353.png">
+<img width="1102" alt="questionnaire4" src="https://user-images.githubusercontent.com/26148396/50368097-56e84d80-0553-11e9-8482-369f24b3bc29.png">
+<img width="1102" alt="questionnaire5" src="https://user-images.githubusercontent.com/26148396/50368098-56e84d80-0553-11e9-91f0-878c27727c26.png">
+<img width="1102" alt="questionnaire6" src="https://user-images.githubusercontent.com/26148396/50368099-56e84d80-0553-11e9-8564-0187e124d74a.png">
+<img width="1102" alt="questionnaire7" src="https://user-images.githubusercontent.com/26148396/50368100-56e84d80-0553-11e9-9a05-39882527d7c1.png">
+<img width="1102" alt="questionnaire8" src="https://user-images.githubusercontent.com/26148396/50368101-56e84d80-0553-11e9-8dae-ef4a8f7ab1cc.png">
 
 ## App Functionality
 
