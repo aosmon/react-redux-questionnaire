@@ -2,9 +2,7 @@
 
 A React/Redux web app that lets users play the “Would You Rather?” game, where they can answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard. The project emphasizes using React and Redux together to build the application, that allows to improve the predictability of the application’s state; establish strict rules for getting, listening, and updating the store; and identify what state should live inside of Redux and what state should live inside of React components. Provided starter code consists of a Data.js file, which represents a fake database and contains methods to access the data. 
 
-<img width="1102" alt="quiestionnaire1" src="https://user-images.githubusercontent.com/26148396/50368094-56e84d80-0553-11e9-9d03-011d540a5246.png">
 <img width="1102" alt="questionnaire2" src="https://user-images.githubusercontent.com/26148396/50368095-56e84d80-0553-11e9-9ce3-84d01dcca23d.png">
-<img width="1102" alt="questionnaire3" src="https://user-images.githubusercontent.com/26148396/50368096-56e84d80-0553-11e9-9c90-27b726f82353.png">
 <img width="1102" alt="questionnaire4" src="https://user-images.githubusercontent.com/26148396/50368097-56e84d80-0553-11e9-8482-369f24b3bc29.png">
 <img width="1102" alt="questionnaire5" src="https://user-images.githubusercontent.com/26148396/50368098-56e84d80-0553-11e9-91f0-878c27727c26.png">
 <img width="1102" alt="questionnaire6" src="https://user-images.githubusercontent.com/26148396/50368099-56e84d80-0553-11e9-8564-0187e124d74a.png">
